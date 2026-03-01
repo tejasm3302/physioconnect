@@ -19,7 +19,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Docker compose up
-        run: docker compose up -d --build
+        shell: powershell
+        run: |
+          $docker = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
+          if (!(Test-Path $docker)) { throw "Docker executable not found at $docker" }
+          & $docker compose up -d --build
 
       - name: Show running containers
-        run: docker compose ps
+        shell: powershell
+        run: |
+          $docker = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
+          & $docker compose ps
