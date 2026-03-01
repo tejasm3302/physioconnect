@@ -19,14 +19,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Docker compose up
-        shell: powershell
+        shell: cmd
         run: |
-          $docker = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
-          if (!(Test-Path $docker)) { throw "Docker executable not found at $docker" }
-          & $docker compose --project-name physioconnect-marketplace-application7 up -d --build
+          "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-name physioconnect-marketplace-application7 up -d --build
 
       - name: Show running containers
-        shell: powershell
+        shell: cmd
         run: |
-          $docker = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
-          & $docker compose --project-name physioconnect-marketplace-application7 ps
+          "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-name physioconnect-marketplace-application7 ps
