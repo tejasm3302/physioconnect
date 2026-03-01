@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-family-inter: "Inter", sans-serif;
+  
+  --color-cream-50: #fff7ed;
+  --color-cream-100: #ffedd5;
+  
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+  
+  --color-accent-400: #fcd34d;
+  --color-accent-500: #fbbf24;
+  --color-accent-600: #f59e0b;
+  
+  --color-success-400: #a3e635;
+  --color-success-500: #84cc16;
+  --color-success-600: #65a30d;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light mode (default) */
+body {
+  background-color: #fff7ed;
+  color: #1e293b;
+}
+
+/* Dark mode - using :where for proper specificity */
+:where(.dark) body,
+:where(html.dark) body {
+  background-color: #09090b !important;
+  color: #f4f4f5 !important;
+}
+
+/* Ensure dark mode class on html works */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #09090b;
+  color: #f4f4f5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-zinc-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-zinc-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-zinc-500;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

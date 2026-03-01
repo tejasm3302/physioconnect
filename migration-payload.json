@@ -1,0 +1,195 @@
+{
+  "users": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "role": "admin",
+      "email": "admin@physioconnect.com",
+      "password": "YWRtaW4xMjM=",
+      "fullName": "Admin User",
+      "phone": "+91 98765 43210",
+      "verified": true,
+      "createdAt": "2025-09-02T10:34:36.124Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000011",
+      "role": "therapist",
+      "email": "sarah@physio.com",
+      "password": "cGh5c2lvMTIz",
+      "fullName": "Dr. Sarah Mitchell",
+      "phone": "+91 98765 11111",
+      "verified": true,
+      "createdAt": "2025-11-01T10:34:36.124Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000012",
+      "role": "therapist",
+      "email": "arjun@physio.com",
+      "password": "cGh5c2lvMTIz",
+      "fullName": "Dr. Arjun Patel",
+      "phone": "+91 98765 22222",
+      "verified": true,
+      "createdAt": "2025-08-13T10:34:36.124Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000013",
+      "role": "therapist",
+      "email": "priya@physio.com",
+      "password": "cGh5c2lvMTIz",
+      "fullName": "Dr. Priya Reddy",
+      "phone": "+91 98765 33333",
+      "verified": false,
+      "createdAt": "2026-02-15T10:34:36.124Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000021",
+      "role": "customer",
+      "email": "rahul@email.com",
+      "password": "cGF0aWVudDEyMw==",
+      "fullName": "Rahul Sharma",
+      "phone": "+91 98765 44444",
+      "verified": true,
+      "createdAt": "2025-12-31T10:34:36.124Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000022",
+      "role": "customer",
+      "email": "anita@email.com",
+      "password": "cGF0aWVudDEyMw==",
+      "fullName": "Anita Desai",
+      "phone": "+91 98765 55555",
+      "verified": true,
+      "createdAt": "2025-12-01T10:34:36.124Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "10000000-0000-0000-0000-000000000001",
+      "customerId": "00000000-0000-0000-0000-000000000021",
+      "therapistId": "00000000-0000-0000-0000-000000000011",
+      "date": "2026-02-22",
+      "time": "10:00",
+      "duration": 60,
+      "visitType": "clinic",
+      "status": "completed",
+      "price": 1500,
+      "notes": "Lower back pain assessment and initial treatment",
+      "createdAt": "2026-02-19T10:34:36.124Z",
+      "completedAt": "2026-02-22T10:34:36.124Z"
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000002",
+      "customerId": "00000000-0000-0000-0000-000000000021",
+      "therapistId": "00000000-0000-0000-0000-000000000011",
+      "date": "2026-03-03",
+      "time": "14:00",
+      "duration": 60,
+      "visitType": "clinic",
+      "status": "confirmed",
+      "price": 1500,
+      "notes": "Follow-up session for back pain treatment",
+      "createdAt": "2026-02-26T10:34:36.124Z"
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000003",
+      "customerId": "00000000-0000-0000-0000-000000000022",
+      "therapistId": "00000000-0000-0000-0000-000000000012",
+      "date": "2026-02-15",
+      "time": "11:00",
+      "duration": 60,
+      "visitType": "clinic",
+      "status": "completed",
+      "price": 2000,
+      "notes": "Knee rehabilitation session",
+      "createdAt": "2026-02-09T10:34:36.124Z",
+      "completedAt": "2026-02-15T10:34:36.124Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "20000000-0000-0000-0000-000000000001",
+      "therapistId": "00000000-0000-0000-0000-000000000011",
+      "planId": "quarterly",
+      "planName": "Quarterly",
+      "amount": 1499,
+      "method": "upi",
+      "status": "success",
+      "paymentId": "pay_seed_00000001",
+      "date": "2026-01-30T10:34:36.124Z"
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000002",
+      "therapistId": "00000000-0000-0000-0000-000000000012",
+      "planId": "monthly",
+      "planName": "Monthly",
+      "amount": 599,
+      "method": "card",
+      "status": "success",
+      "paymentId": "pay_seed_00000002",
+      "date": "2026-02-24T10:34:36.124Z"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "30000000-0000-0000-0000-000000000001",
+      "customerId": "00000000-0000-0000-0000-000000000021",
+      "therapistId": "00000000-0000-0000-0000-000000000011",
+      "createdAt": "2026-02-22T10:34:36.124Z",
+      "expiresAt": "2026-03-24T10:34:36.124Z",
+      "status": "active"
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000002",
+      "customerId": "00000000-0000-0000-0000-000000000022",
+      "therapistId": "00000000-0000-0000-0000-000000000012",
+      "createdAt": "2026-02-15T10:34:36.124Z",
+      "expiresAt": "2026-03-17T10:34:36.124Z",
+      "status": "active"
+    }
+  ],
+  "carePlans": [
+    {
+      "id": "40000000-0000-0000-0000-000000000001",
+      "customerId": "00000000-0000-0000-0000-000000000021",
+      "therapistId": "00000000-0000-0000-0000-000000000011",
+      "title": "Lower Back Recovery Plan",
+      "goals": "Reduce pain and improve mobility over structured sessions.",
+      "totalSessions": 6,
+      "completedSessions": 2,
+      "status": "active",
+      "createdAt": "2026-02-19T10:34:36.124Z",
+      "updatedAt": "2026-02-27T10:34:36.124Z"
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000002",
+      "customerId": "00000000-0000-0000-0000-000000000022",
+      "therapistId": "00000000-0000-0000-0000-000000000012",
+      "title": "Knee Strength & Stability Plan",
+      "goals": "Improve knee strength and function with progressive therapy.",
+      "totalSessions": 8,
+      "completedSessions": 3,
+      "status": "active",
+      "createdAt": "2026-02-09T10:34:36.124Z",
+      "updatedAt": "2026-02-28T10:34:36.124Z"
+    }
+  ],
+  "sessionHistory": [
+    {
+      "id": "50000000-0000-0000-0000-000000000001",
+      "bookingId": "10000000-0000-0000-0000-000000000001",
+      "customerId": "00000000-0000-0000-0000-000000000021",
+      "therapistId": "00000000-0000-0000-0000-000000000011",
+      "carePlanId": "40000000-0000-0000-0000-000000000001",
+      "summary": "Initial assessment completed. Started mobility routine.",
+      "createdAt": "2026-02-22T10:34:36.124Z"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000002",
+      "bookingId": "10000000-0000-0000-0000-000000000003",
+      "customerId": "00000000-0000-0000-0000-000000000022",
+      "therapistId": "00000000-0000-0000-0000-000000000012",
+      "carePlanId": "40000000-0000-0000-0000-000000000002",
+      "summary": "Knee rehab session with targeted strengthening progression.",
+      "createdAt": "2026-02-15T10:34:36.124Z"
+    }
+  ]
+}
