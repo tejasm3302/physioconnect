@@ -15,20 +15,18 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - name: Deploy from local repo folder
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker compose up
         shell: powershell
         run: |
-          $repo = 'C:\Users\Admin\Downloads\physioconnect-marketplace-application (7)'
-          $git = 'C:\Program Files\Git\cmd\git.exe'
           $docker = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
+          if (!(Test-Path $docker)) { throw "Docker executable not found at $docker" }
+          & $docker compose --project-name physioconnect-marketplace-application7 up -d --build
 
-          if (!(Test-Path $repo)) { throw "Repo folder not found: $repo" }
-          if (!(Test-Path $git)) { throw "Git not found: $git" }
-          if (!(Test-Path $docker)) { throw "Docker not found: $docker" }
-
-          & $git -C $repo fetch origin main
-          & $git -C $repo reset --hard origin/main
-
-          Set-Location $repo
-          & $docker compose up -d --build
-          & $docker compose ps
+      - name: Show running containers
+        shell: powershell
+        run: |
+          $docker = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
+          & $docker compose --project-name physioconnect-marketplace-application7 ps
